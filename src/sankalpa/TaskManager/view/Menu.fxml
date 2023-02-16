@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="650.0" style="-fx-background-color: #3B3B3B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sankalpa.TaskManager.Controllers.MenuController">
+   <children>
+      <VBox prefHeight="700.0" prefWidth="400.0" style="-fx-background-color: #3B3B3B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="67.0" prefWidth="400.0" style="-fx-background-color: #3B3B3B;">
+               <children>
+                  <Label alignment="CENTER" layoutX="73.0" layoutY="-2.0" prefHeight="61.0" prefWidth="328.0" style="-fx-background-color: #3B3B3B;" text="Task Manager" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Times New Roman" size="43.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.4777777777777778" centerY="0.5" radius="0.7441860465116279">
+                           <stops>
+                              <Stop color="#00fa4a" />
+                              <Stop color="#0078ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Label>
+                  <Line endX="465.29290771484375" endY="7.748603820800781E-7" layoutX="183.0" layoutY="60.0" startX="-184.0" AnchorPane.bottomAnchor="0.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.5">
+                     <stroke>
+                        <RadialGradient centerX="0.4777777777777778" centerY="0.5" radius="1.0">
+                           <stops>
+                              <Stop color="#fa6c00" />
+                              <Stop color="#2300ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </stroke>
+                  </Line>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="pane" prefHeight="523.0" prefWidth="386.0" style="-fx-background-color: #3B3B3B;">
+               <children>
+                  <TableView fx:id="tblTaskes" layoutX="-51.0" layoutY="36.0" prefHeight="509.0" prefWidth="651.0" style="-fx-font-weight: bold; -fx-background-color: #3B3B3B;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="task" prefWidth="562.0" style="-fx-background-color: #3B3B3B; -fx-font-weight: bold; -fx-text-fill: #FFFF;" text="Task" />
+                        <TableColumn fx:id="option" minWidth="0.0" prefWidth="88.0" style="-fx-background-color: #3B3B3B; -fx-text-fill: #FFFF;" text="Option" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="btnPane" prefHeight="144.0" prefWidth="400.0" style="-fx-background-color: black;">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="276.0" layoutY="15.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="275.0" AnchorPane.topAnchor="15.0">
+                     <image>
+                        <Image url="@../accetss/icon/to-do-list.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnToDo" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#newTaskOnAction" opacity="0.26" prefHeight="117.0" prefWidth="401.0" style="-fx-cursor: hand;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Pane fx:id="addNedwtaskPane" prefHeight="269.0" prefWidth="651.0" style="-fx-background-color: #B31B45;">
+         <children>
+            <TextField fx:id="tName" alignment="CENTER" layoutX="150.0" layoutY="118.0" prefHeight="41.0" prefWidth="351.0" promptText="Task">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tTime" alignment="CENTER" layoutX="150.0" layoutY="209.0" onAction="#tTimeOnAction" prefHeight="41.0" prefWidth="351.0" promptText="Time Remind">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tNumber" alignment="CENTER" layoutX="150.0" layoutY="19.0" prefHeight="41.0" prefWidth="351.0" promptText="Number">
+               <font>
+                  <Font name="Times New Roman" size="21.0" />
+               </font>
+            </TextField>
+            <JFXTimePicker fx:id="timepicker" layoutX="72.0" layoutY="76.0" onAction="#timepickerOnAction" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
