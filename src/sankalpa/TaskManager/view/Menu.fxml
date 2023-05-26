@@ -69,14 +69,9 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Pane fx:id="addNedwtaskPane" prefHeight="269.0" prefWidth="651.0" style="-fx-background-color: #B31B45;">
+      <Pane fx:id="addNedwtaskPane" prefHeight="269.0" prefWidth="651.0" style="-fx-background-color: lightgrey;">
          <children>
             <TextField fx:id="tName" alignment="CENTER" layoutX="150.0" layoutY="118.0" prefHeight="41.0" prefWidth="351.0" promptText="Task">
-               <font>
-                  <Font name="Times New Roman" size="21.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="tTime" alignment="CENTER" layoutX="150.0" layoutY="209.0" onAction="#tTimeOnAction" prefHeight="41.0" prefWidth="351.0" promptText="Time Remind">
                <font>
                   <Font name="Times New Roman" size="21.0" />
                </font>
@@ -86,7 +81,7 @@
                   <Font name="Times New Roman" size="21.0" />
                </font>
             </TextField>
-            <JFXTimePicker fx:id="timepicker" layoutX="72.0" layoutY="76.0" onAction="#timepickerOnAction" />
+            <JFXTimePicker fx:id="timepicker" layoutX="207.0" layoutY="209.0" onAction="#timepickerOnAction" prefHeight="25.0" prefWidth="237.0" />
          </children>
       </Pane>
    </children>

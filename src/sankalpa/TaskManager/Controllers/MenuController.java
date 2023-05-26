@@ -116,6 +116,22 @@ public class MenuController {
 
         addNedwtaskPane.setVisible(true);
         new ZoomIn(addNedwtaskPane).play();
+        String name = tName.getText();
+//        String time = tTime.getText();
+        String value = String.valueOf(timepicker.getValue());
+        int number = Integer.parseInt(tNumber.getText());
+
+        Task task =new Task(number,name,value);
+
+        try {
+            TaskMange.addnewtask(task);
+            new Alert(null,"Task Added successfuly");
+        } catch (SQLException | ClassNotFoundException e) {
+
+            System.out.println(e);
+        }
+        loadAllTaskes();
+
 
 notifications();
 
